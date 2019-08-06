@@ -13,4 +13,20 @@ public class FunRestController {
         return "Hello! Time: " + LocalDateTime.now();
     }
 
+    @GetMapping("/a")
+    public String getDailyWorkout() {
+        return "Run fast!";
+    }
+
+    @GetMapping("/s")
+    public String getFortune() {
+        return "Lucky day!";
+    }
+
+/*
+    @GetMapping("/d")
+    public String getHello() {
+        return "Hello my lucky day!";
+    }*/
+
 }
