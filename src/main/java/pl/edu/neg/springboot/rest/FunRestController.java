@@ -17,6 +17,8 @@ public class FunRestController {
     public String getDailyWorkout() {
         return "Run fast!";
     }
+
+
 /*
     @GetMapping("/s")
     public String getFortune() {
