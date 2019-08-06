@@ -12,7 +12,7 @@ public class FunRestController {
     public String hello() {
         return "Hello! Time: " + LocalDateTime.now();
     }
-
+/*
     @GetMapping("/a")
     public String getDailyWorkout() {
         return "Run fast!";
@@ -23,7 +23,6 @@ public class FunRestController {
         return "Lucky day!";
     }
 
-/*
     @GetMapping("/d")
     public String getHello() {
         return "Hello my lucky day!";
