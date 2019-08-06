@@ -18,8 +18,6 @@ public class FunRestController {
         return "Run fast!";
     }
 
-
-/*
     @GetMapping("/s")
     public String getFortune() {
         return "Lucky day!";
@@ -28,6 +26,6 @@ public class FunRestController {
     @GetMapping("/d")
     public String getHello() {
         return "Hello my lucky day!";
-    }*/
+    }
 
 }
