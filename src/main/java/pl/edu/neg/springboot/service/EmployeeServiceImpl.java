@@ -1,5 +1,7 @@
 package pl.edu.neg.springboot.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.edu.neg.springboot.dao.EmployeeDAO;
@@ -12,7 +14,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeDAO employeeDAO;
 
-    public EmployeeServiceImpl(EmployeeDAO theEmployeeDAO) {
+    // when we have 2 DAO Impl we should add @Qualifier with Bean ID
+    @Autowired
+    public EmployeeServiceImpl(@Qualifier("employeeDAOJpaImpl") EmployeeDAO theEmployeeDAO) {
         employeeDAO = theEmployeeDAO;
     }
 

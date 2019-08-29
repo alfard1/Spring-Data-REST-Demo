@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import pl.edu.neg.springboot.entity.Employee;
 
 import javax.persistence.EntityManager;
@@ -13,10 +12,9 @@ import java.util.List;
 @Repository
 public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 
-    // define field for entitymanager
     private EntityManager entityManager;
 
-    // set up constructor injection
+    // constructor injection
     @Autowired
     public EmployeeDAOHibernateImpl(EntityManager theEntityManager) {
         entityManager = theEntityManager;
@@ -28,7 +26,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 
-        // query
+        // query (no need to manage transactions, handled at Service layer with @Transactional)
         Query<Employee> theQuery = currentSession.createQuery("from Employee", Employee.class);
 
         // execute query and get result list
